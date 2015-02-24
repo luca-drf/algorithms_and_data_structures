@@ -1,7 +1,5 @@
 Common Algorithms And Data Structures
 =====================================
-Python
-------
 A small collection of basic algorithms and data structures in Python.
 
 Requirements
