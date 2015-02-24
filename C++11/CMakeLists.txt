@@ -1,36 +1,33 @@
-# <Copyright Holder>. Copyright (C) <Copyright Year(s)>. <License>.
+# Luca Da Rin Fioretto. Copyright (C) 2015.
 
-#
+
 # Project Properties
-#
+
 CMAKE_MINIMUM_REQUIRED (VERSION 3.1.0)
 PROJECT (ADS)
 SET (APPLICATION_NAME "Algorithms and Datastructures")
 SET (APPLICATION_CODENAME "${PROJECT_NAME}")
 
 
-#
+
 # Debugging Options
-#
+
 SET (CMAKE_VERBOSE_MAKEFILE 0) # Use 1 for debugging, 0 for release
 SET (CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}" )
-#
+
 # Project Output Paths
-#
+
 SET (MAINFOLDER ${PROJECT_SOURCE_DIR})
 SET (EXECUTABLE_OUTPUT_PATH "${MAINFOLDER}/bin")
 
-#
 # Project Search Paths
-#
+
 LIST (APPEND CMAKE_PREFIX_PATH "${MAINFOLDER}")
 FIND_PACKAGE (GTest)
 INCLUDE_DIRECTORIES (${GTEST_INCLUDE_DIRS})
 
-
-#
 # Configure Files
-#
+
 FILE (GLOB_RECURSE CONFIGINPUTS3 src/*.in.h.cmake)
 FILE (GLOB_RECURSE CONFIGINPUTS4 src/*.h.in.cmake)
 FILE (GLOB_RECURSE CONFIGINPUTS5 test/*.in.h.cmake)
@@ -40,8 +37,7 @@ LIST (APPEND CONFIGINPUTS "${CONFIGINPUTS4}")
 LIST (APPEND CONFIGINPUTS "${CONFIGINPUTS5}")
 LIST (APPEND CONFIGINPUTS "${CONFIGINPUTS6}")
 
-#
 # Add Build Targets
-#
+
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(test)
