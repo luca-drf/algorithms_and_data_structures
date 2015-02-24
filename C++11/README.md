@@ -4,7 +4,7 @@ A small collection of basic algorithms and data structures in C++.
 
 Requirements
 ------------
-- Your favourite C++11 compiler
+- Your favorite C++11 compiler
 - GTest 1.7.0 (required for C++ unit tests)
 - CMake (optional but recommended)
 
