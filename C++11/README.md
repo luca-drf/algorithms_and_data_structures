@@ -1,7 +1,5 @@
 Common Algorithms And Data Structures
 =====================================
-C++11
-------
 A small collection of basic algorithms and data structures in C++.
 
 Requirements
