@@ -32,17 +32,17 @@ class Stack:
         return outstr
 
 
-# if __name__ == '__main__':
-#     pile = Stack()
-#     pile.push('a')
-#     pile.push('b')
-#     pile.push('c')
-#     try:
-#         print pile.pop()
-#         print pile.pop()
-#         print pile.pop()
-#         print pile.pop()
-#     except IndexError:
-#         print 'Stack is empty'
+if __name__ == '__main__':
+    pile = Stack()
+    pile.push('a')
+    pile.push('b')
+    pile.push('c')
+    try:
+        print pile.pop()
+        print pile.pop()
+        print pile.pop()
+        print pile.pop()
+    except IndexError:
+        print 'Stack is empty'
 
-#     print pile
+    print pile
