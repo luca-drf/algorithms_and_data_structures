@@ -1,6 +1,8 @@
 """
 Binary Tree module
 """
+import Queue as Q
+
 
 class BinaryNode(object):
     """
@@ -169,6 +171,50 @@ class BinaryTree(object):
                 key = node.key
                 node = node.right
                 yield key
+                
+    def is_balanced(self):
+        """Check if a tree is balanced. The heights of the two
+        subtrees of any node never differ by more than one node."""
+        lb = 0
+        ub = 0
+        q = Q.Queue()
+        q.put((self.root, 0))
+
+        while not q.empty():
+            node, lev = q.get()
+            if node.is_leaf() and lb == 0:
+                lb = lev
+            else:
+                ub = lev + 1
+                if ub - lb > 2:
+                    return False
+                if node.left:
+                    q.put((node.left, ub))
+                if node.right:
+                    q.put((node.right, ub))
+        return True
+
+    def list_tree(self):
+        depths = []
+        stack = []
+        node = self.root
+        level = 0
+        while stack or node:
+            if node:
+                self.__visit(node, level, depths)
+                if node.right:
+                    stack.append((node.right, level + 1))
+                node = node.left
+                level += 1
+            else:
+                node, level = stack.pop()
+        return depths
+
+    def __visit(self, node, level, depths):
+        if len(depths) > level:
+            depths[level].append(node.key)
+        else:
+            depths.append([node.key])
 
     def _find(self, key):
         """Return the node labeled key, None otherwise."""
