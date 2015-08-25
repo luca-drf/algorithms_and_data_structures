@@ -7,7 +7,7 @@ INCLUDE_DIRECTORIES ( ${GTEST_INCLUDE_DIRS} )
 ADD_EXECUTABLE ( AllTests
     AllTests.cc
     BFSTest.cc
-    light_queue_Test.cc
+    lightQueueTest.cc
     ${CMAKE_SOURCE_DIR}/src/bfs.h
     ${CMAKE_SOURCE_DIR}/src/light_queue.h
 )
