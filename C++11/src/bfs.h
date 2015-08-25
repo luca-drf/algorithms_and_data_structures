@@ -11,20 +11,9 @@ using std::unordered_map;
 
 namespace BFS {
     template <typename T>
-    void initialize(unordered_map<T, vector<T> > graph,
-                    unordered_map<T, bool> visited);
-
-    template <typename T>
     vector<T> bfs_traverse(unordered_map<T, vector<T> > graph, T start);
 }
 
-template <typename T>
-void BFS::initialize(unordered_map<T, vector<T> > graph,
-                unordered_map<T, bool> visited) {
-    for (auto i : graph) {
-        visited.emplace(i.first, false);
-    }
-}
 
 template <typename T>
 vector<T> BFS::bfs_traverse(unordered_map<T, vector<T> > graph, T start) {
@@ -32,7 +21,6 @@ vector<T> BFS::bfs_traverse(unordered_map<T, vector<T> > graph, T start) {
     unordered_map<T, bool> visited;
     vector<T> result;
     result.reserve(graph.size());
-    initialize<T>(graph, visited);
     
     queue.enqueue(start);
     visited[start] = true;
